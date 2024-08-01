@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Wallet</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Digital Wallet</h1>
+      <nav id="navbar" style="display: none;">
+        <button onclick="showSection('accountDetails')">Account Details</button>
+        <button onclick="showSection('addFunds')">Add Funds</button>
+        <button onclick="showSection('withdrawFunds')">Withdraw Funds</button>
+        <button onclick="showSection('transaction')">Make a Transaction</button>
+        <button onclick="showSection('history')">Transaction History</button>
+        <button onclick="logout()">Logout</button>
+      </nav>
+    </header>
+    <main>
+      <section id="auth">
+        <h2>Sign Up / Log In</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Log In</button>
+        <button onclick="signup()">Sign Up</button>
+      </section>
+
+      <section id="accountDetails" class="section" style="display: none;">
+        <h2>Account Details</h2>
+        <p>Balance: $<span id="balance">2000</span></p>
+      </section>
+
+      <section id="addFunds" class="section" style="display: none;">
+        <h2>Add Funds</h2>
+        <input type="number" id="addAmount" placeholder="Amount">
+        <button onclick="addFunds()">Add</button>
+        <p id="addFundsMessage"></p>
+      </section>
+
+      <section id="withdrawFunds" class="section" style="display: none;">
+        <h2>Withdraw Funds</h2>
+        <input type="number" id="withdrawAmount" placeholder="Amount">
+        <button onclick="withdrawFunds()">Withdraw</button>
+        <p id="withdrawFundsMessage"></p>
+      </section>
+
+      <section id="transaction" class="section" style="display: none;">
+        <h2>Transfer Money</h2>
+        <input type="text" id="recipient" placeholder="Recipient Name">
+        <input type="text" id="recipientAccount" placeholder="Recipient Account Number">
+        <input type="number" id="amount" placeholder="Amount">
+        <button onclick="transferMoney()">Transfer</button>
+        <p id="message"></p>
+        <button onclick="anotherTransaction()">Make Another Transaction</button>
+      </section>
+
+      <section id="history" class="section" style="display: none;">
+        <h2>Transaction History</h2>
+        <div id="transactionHistory"></div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
